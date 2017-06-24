@@ -5,7 +5,7 @@ Automatically download and install **latest** Spotify version on Linux.
 <br><br>
 
 ## How to install
-1. Clone the repo or download the archive [here](https://github.com/paolorotolo/spotify-opensuse-installer/archive/master.zip).
+1. Clone the repo or download the archive [here](https://github.com/paolorotolo/spotify-linux-installer/archive/master.zip).
 2. Run `./install-spotify.sh`. <br> You may need to make the script executable first with `chmod +x install-spotify.sh`.
 3. Enjoy the music! :)
 
