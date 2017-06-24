@@ -2,6 +2,11 @@
 SPOTIFY_URL=http://repository.spotify.com/pool/non-free/s/spotify-client/
 SPOTIFY_NAME=spotify-client_1.0.57.474.gca9c9538-30_amd64.deb
 
+if [ `id -u` = 0 ] ; then
+        echo "Please don't run this script as root."
+        exit;
+fi
+
 mkdir -p spotify-client
 cd spotify-client
 
