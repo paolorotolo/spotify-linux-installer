@@ -1,5 +1,4 @@
 #!/bin/bash
-APT_GET_CMD=$(which apt-get)
 SPOTIFY_URL=http://repository.spotify.com/pool/non-free/s/spotify-client/
 SPOTIFY_NAME=spotify-client_1.0.57.474.gca9c9538-30_amd64.deb
 
@@ -9,12 +8,12 @@ cd spotify-client
 echo "Downloading Spotify Client..."
 wget $SPOTIFY_URL$SPOTIFY_NAME
 
-if [[ -z $APT_GET_CMD ]]; then
+if [ -f "/etc/debian_version" ]; then
     echo "Detected Debian based system"
     echo "Do you want to install .deb package instead?"
     select yn in "Yes" "No"; do
         case $yn in
-	    Yes ) sudo dpkg -i $SPOTIFY_NAME; sudo apt-get -y -f install; exit;;
+	    Yes ) sudo dpkg -i $SPOTIFY_NAME; sudo apt-get -y -f install; cd ../; rm -rf spotify-client; echo "Done. To unistall, use 'apt purge spotify-client'"; exit;;
 	    No ) break;;
 	esac
     done 
