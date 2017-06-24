@@ -1,7 +1,7 @@
 # Spotify 1.0 installer for Linux
 Automatically download and install **latest** Spotify version on Linux.
 <br><br>
-![](https://github.com/paolorotolo/spotify-opensuse-installer/blob/master/artwork/spotify-opensuse.jpg)
+![](https://github.com/paolorotolo/spotify-linux-installer/blob/master/artwork/spotify-opensuse.jpg)
 <br><br>
 
 ## How to install
@@ -15,7 +15,7 @@ Just run `./unistall-spotify.sh`.
 ## Why this repo
 Basically for the same reasons of [this repo](https://github.com/aspiers/opensuse-spotify-installer#why-is-this-script-here-on-github). If installing Spotify is very easy on Debian based distros, it can be tricky on other Linux systems like OpenSuse. In fact, projects like [opensuse-spotify-installer](https://github.com/aspiers/opensuse-spotify-installer) or [spotify-make](https://github.com/leamas/spotify-make) still uses a very old and now unstable version of Spotify that requires additional dependencies to work.
 
-Using this script, you'll install latest Spotify available (1.0.\*). The script has been tested on a fresh OpenSuse installation and it **doesn't require** additional dependancies to make Spotify work. Please test it on other distros and let me know what doesn't work so we can build a list of dependencies togheter.
+Using this script, you'll install latest Spotify available (1.0.\*). The script has been tested on a fresh OpenSuse installation and it **doesn't require** additional dependancies to make Spotify work. Please test it on other distros and let me know what doesn't work so we can build a list of dependencies together.
 
 The script doesn't require root.
 
