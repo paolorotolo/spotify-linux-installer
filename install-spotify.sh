@@ -33,8 +33,18 @@ mkdir -p $HOME/.local/share/icons/hicolor/128x128/apps/
 cp usr/share/spotify/icons/spotify-linux-128.png $HOME/.local/share/icons/hicolor/128x128/apps/spotify-client.png
 cp -r usr/share/spotify/ $HOME/.local/share/
 ln -s $HOME/.local/share/spotify/spotify $HOME/bin/
-echo "export PATH="$HOME/bin:$PATH"" >> $HOME/.bashrc
+
+declare file_content=$( cat "$HOME/.bashrc" )
+if [[ " $file_content " =~ "export PATH="$HOME/bin:$PATH"" ]]
+    then
+        echo "PATH already added in .bashrc."
+    else
+        echo "Adding patch in .bashrc."
+        echo "export PATH="$HOME/bin:$PATH"" >> $HOME/.bashrc
+fi
+
 cd ../
+update-desktop-database -q
 cp spotify.desktop $HOME/.local/share/applications/
 echo "Cleaning folder..."
 rm -rf spotify-client/
