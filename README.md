@@ -29,7 +29,7 @@ The script doesn't require root.
 
 |   | Dependencies  | Link |
 |---|---|---|
-| Debian | `libssl1.0.0` |  [Download](https://packages.debian.org/it/jessie/YOUR-ARCH/libssl1.0.0/download)
+| Debian | `libssl1.0.0` |  [Download](https://packages.debian.org/it/jessie//libssl1.0.0/download)
 
 Did you try the script on your distro? [Let us know](https://github.com/paolorotolo/spotify-linux-installer/issues/new) what works.
 
