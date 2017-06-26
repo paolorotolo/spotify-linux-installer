@@ -25,6 +25,12 @@ The script doesn't require root.
 | OpenSuse | `binutils` | Works well on a fresh OpenSuse installation. Just requires `binutils` to extract the .deb file  |
 | Ubuntu/Debian | `libasound2 libcurl3 libgconf-2-4 libglib2.0-0 libgtk2.0-0 libnss3 libssl1.0.0 libxss1 libxtst6 xdg-utils`  | Dependancies taken from Spotify's official `control` file|
 
+## Dependencies
+
+|   | Dependencies  | Link |
+|---|---|---|
+| Debian | `libssl1.0.0` |  [Download](https://packages.debian.org/it/jessie//libssl1.0.0/download)
+
 Did you try the script on your distro? [Let us know](https://github.com/paolorotolo/spotify-linux-installer/issues/new) what works.
 
 ## Licence and Contributions
