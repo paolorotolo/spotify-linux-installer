@@ -7,7 +7,16 @@ if [ `id -u` = 0 ] ; then
         exit;
 fi
 
+function clean_up {
+	rm -rf spotify-client/
+}
+
+trap clean_up SIGHUP SIGINT SIGTERM
+
+if [ ! -d "spotify-client" ]; then
 mkdir -p spotify-client
+fi
+
 cd spotify-client
 
 echo "Downloading Spotify Client..."
@@ -25,7 +34,7 @@ if [ -f "/etc/debian_version" ]; then
 fi
 
 echo "Decompressing files..."
-ar x spotify-client_1.0.57.474.gca9c9538-30_amd64.deb
+ar x $SPOTIFY_NAME
 tar -xvzf data.tar.gz
 echo "Copying files..."
 mkdir -p $HOME/bin/
@@ -47,5 +56,5 @@ cd ../
 update-desktop-database -q
 cp spotify.desktop $HOME/.local/share/applications/
 echo "Cleaning folder..."
-rm -rf spotify-client/
+clean_up
 echo "Done."
