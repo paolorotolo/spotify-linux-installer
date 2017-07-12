@@ -53,6 +53,7 @@ if [[ " $file_content " =~ "export PATH="$HOME/bin:$PATH"" ]]
 fi
 
 cd ../
+gtk-update-icon-cache
 update-desktop-database -q
 cp spotify.desktop $HOME/.local/share/applications/
 echo "Cleaning folder..."
