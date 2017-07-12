@@ -6,6 +6,7 @@ Name:       spotify-linux-installer
 Summary:    Automatically downloads and installs the latest Spotify version on Linux.
 Version:    1.0.1
 Release:    1
+BuildRequires: unzip
 #Requires:   binutils
 BuildRoot:  %{_tmppath}/%{name}-%{version}-build
 BuildArch:  noarch
@@ -22,7 +23,6 @@ If installing Spotify is very easy on Debian based distros, it can be tricky on 
 
 %install
 mkdir -p %{buildroot}/opt/spotify-linux-installer
-cp -a artwork %{buildroot}/opt/spotify-linux-installer
 cp -a install-spotify.sh %{buildroot}/opt/spotify-linux-installer
 cp -a LICENSE %{buildroot}/opt/spotify-linux-installer
 cp -a README.md %{buildroot}/opt/spotify-linux-installer
@@ -39,13 +39,11 @@ cp -a uninstall-spotify.sh %{buildroot}/opt/spotify-linux-installer
 %defattr(-,root,root)
 %license /opt/spotify-linux-installer/LICENSE
 %doc /opt/spotify-linux-installer/README.md
-/opt/spotify-linux-installer/artwork
-/opt/spotify-linux-installer/install-spotify.sh
-/opt/spotify-linux-installer/LICENSE
-/opt/spotify-linux-installer/README.md
-/opt/spotify-linux-installer/spotify.desktop
-/opt/spotify-linux-installer/uninstall-spotify.sh
+%dir /opt/spotify-linux-installer/
+/opt/spotify-linux-installer/*
 
 %changelog
-* Sun 09 Jul 2017 Jonathan Landrum <me@jonlandrum.com> - 1.0.1
+* Wed Jul 12 2017 Paolo Rotolo <rotolopao@gmail.com> - 0.2.0
+- Fix some issues on OpenSuse systems.
+* Sun Jul 09 2017 Jonathan Landrum <me@jonlandrum.com> - 0.1.0
 - Initial version with RPM support
