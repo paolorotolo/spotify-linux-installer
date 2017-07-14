@@ -7,7 +7,8 @@ Automatically download and install **latest** Spotify version on Linux.
 ## How to install
 1. Clone the repo or download the archive [here](https://github.com/paolorotolo/spotify-linux-installer/archive/master.zip).
 2. Run `./install-spotify.sh`. <br> You may need to make the script executable first with `chmod +x install-spotify.sh`.
-3. Enjoy the music! :)
+3. Reboot if spotify icon is not showing correctly. 
+4. Enjoy the music! :)
 
 ## How to unistall
 Just run `./unistall-spotify.sh`.
