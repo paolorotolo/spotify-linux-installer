@@ -53,7 +53,7 @@ if [[ " $file_content " =~ "export PATH="$HOME/bin:$PATH"" ]]
 fi
 
 cd ../
-gtk-update-icon-cache
+cp -s /usr/share/icons/hicolor/index.theme $HOME/.local/share/icons/hicolor 
 update-desktop-database -q
 cp spotify.desktop $HOME/.local/share/applications/
 echo "Cleaning folder..."
