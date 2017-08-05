@@ -1,6 +1,7 @@
 #!/bin/bash
 SPOTIFY_URL=http://repository.spotify.com/pool/non-free/s/spotify-client/
-SPOTIFY_NAME=spotify-client_1.0.59.395.ge6ca9946-18_amd64.deb
+SPOTIFY_NAME_URL=http://repository.spotify.com/pool/non-free/s/spotify-client/
+SPOTIFY_NAME=""
 
 if [ `id -u` = 0 ] ; then
         echo "Please don't run this script as root."
@@ -10,6 +11,24 @@ fi
 function clean_up {
 	rm -rf spotify-client/
 }
+
+function get_spotify_name {
+	wget $SPOTIFY_NAME_URL
+
+	echo "Update version..."	
+
+	mv index.html data.txt
+
+	SPOTIFY_NAME=$(awk -F\" '/href=/{print $2}' data.txt | grep amd64 | sed '1 d')
+
+	echo "Remove temporary file..."
+	
+	rm -rf data.txt
+
+	echo "Version updated successful"
+}
+
+get_spotify_name
 
 trap clean_up SIGHUP SIGINT SIGTERM
 
