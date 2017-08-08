@@ -74,6 +74,9 @@ cp -r usr/share/spotify/ $HOME/.local/share/
 
 ln -s $HOME/.local/share/spotify/spotify $HOME/bin/
 
+echo "Backup .bashrc..."
+cp $HOME/.bashrc $HOME/.bashrc.bak
+
 declare file_content=$( cat "$HOME/.bashrc" )
 if [[ " $file_content " =~ "export PATH="$HOME/bin:$PATH"" ]]
     then
